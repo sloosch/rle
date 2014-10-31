@@ -1,19 +1,26 @@
 {
-  "name": "rle",
-  "version": "1.0.0",
-  "description": "RLE - run length encoding, the simplest approach for lossless compression",
-  "main": "index.js",
-  "scripts": {
-    "test": "node test.js"
-  },
-  "keywords": [
-    "rle",
-    "compression",
-    "transfer",
-    "communication",
-    "reduction",
-    "fax"
-  ],
-  "author": "sloosch",
-  "license": "ISC"
+    "name": "rle",
+    "version": "1.0.1",
+    "description": "RLE - run length encoding, the simplest approach for lossless compression",
+    "main": "index.js",
+    "scripts": {
+        "test": "node test.js"
+    },
+    "keywords": [
+        "rle",
+        "compression",
+        "transfer",
+        "communication",
+        "reduction",
+        "fax"
+    ],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/sloosch/rle.git"
+    },
+    "bugs": {
+        "url": "https://github.com/sloosch/rle/issues"
+    },
+    "author": "sloosch",
+    "license": "ISC"
 }
