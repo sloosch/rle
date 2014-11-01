@@ -6,7 +6,7 @@
      * This function further packs the data to reduce the memory usage by nominal 1/4 of the simple RLE approach.
      * @param {Array<*>} stream
      * array of binary data. "truthy" values will be treated as 1
-     * @returns {Array<number>}
+     * @returns {Uint32Array}
      * array of 32 bit chunks representing the encoded data
      */
     RLE.encode = function (stream) {
@@ -38,12 +38,12 @@
                 symbol = !symbol;
             }
         }
-        return out;
+        return new Uint32Array(out);
     };
 
     /**
      * Decodes the stream of RLE data to a binary stream
-     * @param {Array<number>} stream
+     * @param {Uint32Array} stream
      * encoded stream of RLE encoded data
      * @returns {Array<boolean>}
      * binary representation of the data

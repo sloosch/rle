@@ -8,13 +8,13 @@ _the simplest approach for lossless compression_
 
 ###API
 
-`Array<number> RLE.encode(Array<*> stream)`  
+`Uint32Array RLE.encode(Array<*> stream)`  
 Encodes the given stream of binary data by run length. Each "truthy" element in the stream is treated as 1.  
 The maximum run length is "limited" to 2^28.  
 This function further packs the data to reduce the memory usage by nominal 1/4 of the simple RLE approach.  
 
 
-`Array<boolean> RLE.decode(Array<number> stream)`  
+`Array<boolean> RLE.decode(Uint32Array stream)`  
 Decodes the stream of RLE data to a binary stream.
 
 
@@ -36,4 +36,15 @@ var encoded = rle.encode(blackAndWhite.asArray());
 //....
 
 var decoded = rle.decode(encoded);
+```
+
+####Base64
+```javascript
+var rleEncoded = rle.encode(data);
+base64Encoded = new Buffer(new Uint8Array(rleEncoded.buffer)).toString('base64');
+
+//....
+
+var base64Decoded = new Uint32Array(new Uint8Array(new Buffer(base64Encoded, 'base64')).buffer);
+ var rleDecoded = rle.decode(base64Decoded);
 ```
